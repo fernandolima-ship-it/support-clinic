@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Clinic | Support Health</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fontes Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-heading { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        /* Estilos do velocímetro semi-circular */
+        .gauge-wrap {
+            position: relative;
+            width: 180px;
+            height: 90px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .gauge-bg {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 14px solid #e2e8f0;
+            box-sizing: border-box;
+        }
+        .gauge-fill {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 14px solid transparent;
+            box-sizing: border-box;
+            border-left-color: #ef4444; /* Vermelho para alterado */
+            border-top-color: #f59e0b;  /* Amarelo */
+            transform: rotate(-45deg);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-700 antialiased selection:bg-blue-600 selection:text-white">
+
+    <!-- Header -->
+    <header class="border-b border-slate-100 sticky top-0 bg-white/90 backdrop-blur-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl font-extrabold text-slate-900 tracking-tight font-heading">Support<span class="text-[#0252fd]">Health</span></span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-500">
+                <a href="#protocolos" class="hover:text-slate-900 transition">Biblioteca de Protocolos</a>
+                <a href="#suportal-ia" class="hover:text-slate-900 transition">Inteligência Artificial</a>
+                <a href="#gestao" class="hover:text-slate-900 transition">Gestão & Operação</a>
+                <a href="#especialista" class="hover:text-slate-900 transition">Falar com Especialista</a>
+            </nav>
+            <a href="https://wa.me/553189196026?text=Olá%20Fernando,%20gostaria%20de%20agendar%20uma%20demonstração%20personalizada%20do%20sistema." target="_blank" rel="noopener noreferrer" class="bg-[#0252fd] hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-semibold transition text-sm shadow-lg shadow-blue-600/20 inline-flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-base"></i> Agendar Demonstração
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-16 overflow-hidden bg-gradient-to-b from-blue-50/50 to-white">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-blue-600/5 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center space-x-2 bg-blue-50 border border-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-8">
+                <i class="fa-solid fa-sparkles mr-1.5 animate-pulse"></i> Inteligência Artificial + Prontuário
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight leading-none max-w-4xl mx-auto font-heading">
+                Feito para médicos que <span class="text-[#0252fd]">transformam vidas</span>.
+            </h1>
+            
+            <p class="mt-6 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                Organize sua rotina com o software de gestão e prontuário eletrônico especializado. Otimize até 40% do seu tempo operacional para focar no que realmente importa: seu paciente.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://wa.me/553189196026?text=Olá%20Fernando,%20gostaria%20de%20agendar%20uma%20demonstração%20personalizada%20do%20sistema." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-[#0252fd] hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition shadow-xl shadow-blue-600/30 text-center">
+                    Agende uma demonstração personalizada
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1️⃣ SEÇÃO PRINCIPAL: Maior Biblioteca de Injetáveis e Montagem de Protocolos -->
+    <section id="protocolos" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5 space-y-6">
+                <span class="text-[#0252fd] text-xs font-bold uppercase tracking-widest block font-heading">A maior do Brasil</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading leading-tight">
+                    A maior biblioteca de protocolos injetáveis do país
+                </h2>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Ganhe acesso instantâneo a **centenas de protocolos prontos**, estruturados detalhadamente com a composição recomendada, insumos necessários e vias de aplicação (intramuscular, endovenosa ou intradérmica).
+                </p>
+                
+                <div class="space-y-4">
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-xs">
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center shrink-0 mt-0.5"><i class="fa-solid fa-hand-pointer text-[10px]"></i></div>
+                            <div>
+                                <strong class="text-slate-900 block font-heading text-sm">Montagem Ágil (Arrastar & Soltar)</strong>
+                                <span class="text-slate-500 leading-relaxed text-xs">Selecione o protocolo injetável ideal para o paciente e jogue-o diretamente na tela de atendimento na hora.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 text-xs">
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center shrink-0 mt-0.5"><i class="fa-solid fa-calculator text-[10px]"></i></div>
+                            <div>
+                                <strong class="text-slate-900 block font-heading text-sm">Precificação Automática de Ativos</strong>
+                                <span class="text-slate-500 leading-relaxed text-xs">O sistema recalcula a composição, as frações de insumos, a periodicidade e gera o orçamento consolidado transparente instantaneamente.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interface Visual Replicando protocolos.jpg -->
+            <div class="lg:col-span-7 bg-slate-50 border border-slate-200 rounded-2xl p-4 shadow-xl overflow-hidden">
+                <div class="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl p-3.5 text-white mb-4 flex justify-between items-center text-xs">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-full border border-white/40 overflow-hidden bg-slate-800 shrink-0">
+                            <!-- Avatar de usuário simulado do prontuário -->
+                            <div class="w-full h-full bg-slate-700 flex items-center justify-center text-white text-xs"><i class="fa-solid fa-user"></i></div>
+                        </div>
+                        <span class="font-bold">789602 - Fernando Lino Da Silva Lima</span>
+                    </div>
+                    <span class="bg-white/20 px-2.5 py-0.5 rounded-full font-medium">Performance</span>
+                </div>
+
+                <div class="grid sm:grid-cols-12 gap-4">
+                    <div class="sm:col-span-8 bg-white border border-slate-200 rounded-xl p-4 space-y-3 text-xs">
+                        <div class="bg-cyan-50 text-cyan-800 p-2 rounded text-[11px] flex gap-1">
+                            <i class="fa-solid fa-info mt-0.5"></i>
+                            <span>O orçamento final será gerado automaticamente após salvar o plano terapêutico.</span>
+                        </div>
+                        <div class="border border-slate-100 rounded-lg p-3 bg-slate-50/50">
+                            <span class="font-bold text-blue-600 block mb-2">Aminoácidos + HMB para performance (IM)</span>
+                            <div class="space-y-1.5 text-slate-500 font-mono text-[11px]">
+                                <div class="flex justify-between border-b border-slate-100 pb-1"><span>Hidroximetilbutirato (HMB)</span><span>1 Un.</span></div>
+                                <div class="flex justify-between border-b border-slate-100 pb-1"><span>Inositol + Taurina (5% + 5%)</span><span>1 Un.</span></div>
+                                <div class="flex justify-between"><span>L-Ararginina 1000mg/2ml</span><span>1 Un.</span></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center pt-2 border-t border-slate-100">
+                            <span class="text-slate-400 font-medium">Valor total calculated:</span>
+                            <strong class="text-base text-slate-900 font-heading">R$ 2.112,30</strong>
+                        </div>
+                    </div>
+
+                    <div class="sm:col-span-4 bg-white border border-slate-200 rounded-xl p-3 space-y-2 text-[11px]">
+                        <span class="font-bold text-slate-400 uppercase tracking-wider block mb-1">Injetáveis</span>
+                        <div class="p-2 bg-slate-50 rounded border border-slate-100 text-slate-700">Alopecia / Queda Capilar</div>
+                        <div class="p-2 bg-blue-50 text-blue-700 rounded border border-blue-200 font-semibold">Aminoácidos + HMB</div>
+                        <div class="p-2 bg-slate-50 rounded border border-slate-100 text-slate-700">Alzheimer / Cognitivo</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 2️⃣ SEÇÃO: Inteligência Artificial (Support IA & Support Lab) -->
+    <section id="suportal-ia" class="py-20 bg-slate-50/50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Textos Explicativos da IA -->
+                <div class="lg:col-span-5 space-y-5 lg:sticky lg:top-24">
+                    <span class="text-[#0252fd] text-xs font-bold uppercase tracking-widest block font-heading">Inteligência Artificial Nativa</span>
+                    <h2 class="text-3xl font-bold text-slate-900 font-heading leading-tight">
+                        One page, através da sua anamnese a IA poderá auxiliar em todo seu raciocínio clinico
+                    </h2>
+                    <p class="text-sm text-slate-600 leading-relaxed font-semibold">
+                        Diga adeus às digitações cansativas durante as consultas. Nossa IA analisa e transcreve a anamnese automaticamente, gerando sugestão de receitas, exames e dietas de forma instantânea.
+                    </p>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Experimente interagir com as abas de simulação ao lado para ver como os documentos clínicos são gerados pelo sistema com base no relato do paciente.
+                    </p>
+                    <div class="space-y-4 text-xs">
+                        <div class="flex items-start gap-2">
+                            <div class="w-5 h-5 bg-blue-50 text-blue-600 rounded flex items-center justify-center shrink-0 mt-0.5"><i class="fa-solid fa-microphone text-[10px]"></i></div>
+                            <div><strong class="text-slate-900 block">Captação de Consultas por Áudio</strong><span class="text-slate-500">O sistema ouve a interação, organiza as queixas do paciente e preenche os campos correspondentes na anamnese.</span></div>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <div class="w-5 h-5 bg-blue-50 text-blue-600 rounded flex items-center justify-center shrink-0 mt-0.5"><i class="fa-solid fa-apple-whole text-[10px]"></i></div>
+                            <div><strong class="text-slate-900 block">Criação Instantânea de Dietas</strong><span class="text-slate-500">Preencha metas de calorias e preferências e deixe a IA programar a dieta detalhada por refeição em segundos.</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Painel Replicando as Abas Interativas (Prontuário, Receitas, Exames e Dieta) -->
+                <div class="lg:col-span-7 bg-[#090f1d] border border-slate-800 rounded-2xl shadow-2xl overflow-hidden text-xs space-y-4 p-4 text-slate-300">
+                    
+                    <!-- Topbar Roxa/Azul do Support IA -->
+                    <div class="border-b border-slate-800/80 pb-3 flex items-center justify-between">
+                        <div class="flex items-center space-x-2 text-blue-400 font-bold">
+                            <i class="fa-solid fa-sparkles animate-pulse"></i>
+                            <span class="font-heading text-white text-sm">Support IA Workspace</span>
+                        </div>
+                        <i class="fa-solid fa-circle text-emerald-500 text-[10px]"></i>
+                    </div>
+
+                    <!-- Dados do Paciente -->
+                    <div class="p-3 bg-slate-900/40 border border-slate-800/80 rounded-xl flex flex-wrap gap-6 text-[11px]">
+                        <div><span class="text-slate-500 block uppercase text-[9px] font-bold">Prontuário</span><strong class="text-white">Fernando Lino Da Silva Lima</strong></div>
+                        <div><span class="text-slate-500 block uppercase text-[9px] font-bold">Idade</span><strong class="text-white">28 anos</strong></div>
+                        <div><span class="text-slate-500 block uppercase text-[9px] font-bold">Nascimento</span><strong class="text-white">18/06/1998</strong></div>
+                    </div>
+
+                    <!-- Abas de Navegação Clínica Interativas com JavaScript -->
+                    <div class="flex border-b border-slate-800 bg-slate-900/20 overflow-x-auto text-[11px] font-medium text-slate-400 gap-1">
+                        <button onclick="switchTab('anamnese')" id="tab-anamnese" class="px-4 py-2.5 border-b-2 border-blue-500 text-white bg-slate-900/60 font-semibold whitespace-nowrap transition-all">ANAMNESE</button>
+                        <button onclick="switchTab('prescricao')" id="tab-prescricao" class="px-4 py-2.5 border-b-2 border-transparent hover:text-white whitespace-nowrap transition-all">PRESCRIÇÃO</button>
+                        <button onclick="switchTab('pedidoexames')" id="tab-pedidoexames" class="px-4 py-2.5 border-b-2 border-transparent hover:text-white whitespace-nowrap transition-all">PEDIDO DE EXAMES</button>
+                        <button onclick="switchTab('dieta')" id="tab-dieta" class="px-4 py-2.5 border-b-2 border-transparent hover:text-white whitespace-nowrap transition-all font-bold text-emerald-400">DIETA</button>
+                    </div>
+
+                    <!-- Conteúdos Dinâmicos -->
+                    <div class="p-4 bg-slate-900/30 border border-slate-800/80 rounded-xl min-h-[220px]">
+                        
+                        <!-- Conteúdo 1: Anamnese (transcrição.png) -->
+                        <div id="content-anamnese" class="tab-content space-y-4">
+                            <div>
+                                <strong class="text-white block font-heading text-[12px] mb-1">Queixa Principal (QP):</strong>
+                                <p class="text-slate-400 text-[11px] leading-relaxed">Paciente relata dor de cabeça persistente durante todo o dia, acompanhada de náusea, sem alívio com medidas habituais.</p>
+                            </div>
+                            <div>
+                                <strong class="text-white block font-heading text-[12px] mb-1">História da Doença Atual (HDA):</strong>
+                                <p class="text-slate-400 text-[11px] leading-relaxed">A cefaleia iniciou-se no mesmo dia da consulta, com intensidade significativa e sem resposta a intervenções caseiras. A dor é contínua e impacta negativamente o bem-estar.</p>
+                            </div>
+                            <div>
+                                <strong class="text-white block font-heading text-[12px] mb-1">História Social (HS):</strong>
+                                <p class="text-slate-400 text-[11px] leading-relaxed">Refere sedentarismo, ausência de prática de exercícios físicos e padrão alimentar inadequado, com consumo frequente de fast-food (McDonald's, Burger King).</p>
+                            </div>
+                        </div>
+
+                        <!-- Conteúdo 2: Prescrição (receita.png) -->
+                        <div id="content-prescricao" class="tab-content hidden space-y-3">
+                            <strong class="text-white block font-heading text-[12px] mb-1">Prescrição Sugerida pela IA:</strong>
+                            <ul class="space-y-2 text-[11px] text-slate-300 leading-relaxed">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-circle text-[6px] mt-1.5 text-blue-400 shrink-0"></i>
+                                    <span><strong>Paracetamol 500mg</strong> – 1 comprimido a cada 6 horas se necessário para dor de cabeça.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-circle text-[6px] mt-1.5 text-blue-400 shrink-0"></i>
+                                    <span><strong>Dimenidrinato 50mg</strong> – 1 comprimido a cada 8 horas se necessário para náusea.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Conteúdo 3: Pedido de Exames (exames.png) -->
+                        <div id="content-pedidoexames" class="tab-content hidden space-y-4">
+                            <div>
+                                <strong class="text-white block font-heading text-[12px] mb-2">Exames Recomendados:</strong>
+                                <ul class="space-y-1.5 text-[11px] text-slate-300">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-blue-400 text-[8px]"></i> Hemograma completo</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-blue-400 text-[8px]"></i> Glicemia de jejum</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-blue-400 text-[8px]"></i> Perfil lipídico (colesterol total, HDL, LDL, triglicerídeos)</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-blue-400 text-[8px]"></i> TSH e T4 Livre</li>
+                                </ul>
+                            </div>
+                            <div class="pt-3 border-t border-slate-800 text-[10px] text-slate-400 leading-relaxed">
+                                <strong>Orientações:</strong> Jejum de 8 horas obrigatório. <br>
+                                <strong>Justificativa:</strong> Investigação de cefaleia persistente, náusea, dificuldade para emagrecer e histórico de diabetes. Urgência: rotina.
+                            </div>
+                        </div>
+
+                        <!-- Conteúdo 4: Dieta (dietas.png) -->
+                        <div id="content-dieta" class="tab-content hidden space-y-4">
+                            <div>
+                                <strong class="text-white block font-heading text-[13px] mb-1">Dieta de 2.300 kcal — Planejada por IA</strong>
+                                <span class="text-xs text-emerald-400 font-semibold block mb-3">Refeições Estruturadas:</span>
+                            </div>
+                            <div class="space-y-4 text-[11px] leading-relaxed">
+                                <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-800">
+                                    <strong class="text-white block mb-1">Refeição 1 - 07:00</strong>
+                                    <ul class="space-y-1 text-slate-400">
+                                        <li>• 3 ovos de galinha cozidos (210 kcal)</li>
+                                        <li>• 40g queijo minas frescal (106 kcal)</li>
+                                        <li>• 100g abacate (96 kcal)</li>
+                                        <li>• 80g fígado bovino grelhado (rico em B12 e ferro) (180 kcal)</li>
+                                    </ul>
+                                    <span class="text-[10px] text-emerald-400 font-bold block mt-2">Total calórico da opção: 594 kcal</span>
+                                </div>
+                                <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-800">
+                                    <strong class="text-white block mb-1">Refeição 2 - 10:00</strong>
+                                    <ul class="space-y-1 text-slate-400">
+                                        <li>• 170g iogurte natural integral (104 kcal)</li>
+                                        <li>• 30g castanha-do-pará (197 kcal)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <!-- Barra de Ações Inferior -->
+                    <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-slate-500 text-[10px]">
+                        <span>Ações Rápidas de Documentos</span>
+                        <span class="bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full font-bold">Módulo Ativo</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Módulo Integrado: Support Lab Leitor de Exames (Replicando Lab.png) -->
+            <div id="suportelab" class="bg-white border border-slate-200 rounded-3xl p-6 shadow-2xl space-y-6">
+                <div class="flex flex-col sm:flex-row items-center justify-between border-b border-slate-200 pb-4 gap-4 text-xs text-slate-500">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-blue-100 text-[#0252fd] rounded-full flex items-center justify-center"><i class="fa-solid fa-file-waveform text-lg"></i></div>
+                        <div>
+                            <strong class="text-slate-950 text-sm block">Fernando Lino da Silva Lima</strong>
+                            <span>28 ANOS • SUPORT LAB INTEGRADO</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-8 text-center bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm">
+                        <div><span class="block text-[10px] uppercase font-bold text-slate-400">Biomarcadores</span><strong class="text-slate-800 text-sm">20</strong></div>
+                        <div><span class="block text-[10px] uppercase font-bold text-red-500">Alterações</span><strong class="text-red-500 text-sm">5</strong></div>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 items-start">
+                    <!-- Tabela de Biomarcadores (Esquerda) -->
+                    <div class="lg:col-span-4 border border-slate-200 rounded-xl bg-white p-5 space-y-2.5 text-xs shadow-sm">
+                        <span class="text-[10px] uppercase font-bold text-slate-400 block mb-3">Mapeamento em PDF</span>
+                        <div class="flex justify-between border-b border-slate-100 pb-2"><span class="text-red-500 font-semibold">Monócitos:</span><strong class="text-slate-900">478.8 /mm³</strong></div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2"><span class="text-red-500 font-semibold">Monócitos %:</span><strong class="text-slate-900">9 %</strong></div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2"><span class="text-red-500 font-semibold">Concentração de hemoglobina:</span><strong class="text-slate-900">31.8 g/dL</strong></div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2"><span class="text-red-500 font-semibold">RDW:</span><strong class="text-slate-900">13.1 %</strong></div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2"><span class="text-red-500 font-semibold">Linfócitos %:</span><strong class="text-slate-900">40 %</strong></div>
+                    </div>
+
+                    <!-- Gráficos de Velocímetro (Direita) -->
+                    <div class="lg:col-span-8 grid sm:grid-cols-2 gap-6">
+                        <div class="border border-slate-200 rounded-xl p-5 bg-white text-center space-y-4 shadow-md relative overflow-hidden">
+                            <span class="text-xs font-bold text-slate-800 flex items-center justify-center gap-1.5 font-heading">Monócitos <i class="fa-solid fa-triangle-exclamation text-red-500"></i></span>
+                            
+                            <div class="gauge-wrap">
+                                <div class="gauge-bg"></div>
+                                <div class="gauge-fill"></div>
+                                <div class="absolute bottom-0 inset-x-0 text-center">
+                                    <span class="text-2xl font-black text-slate-900 block leading-none">478.80</span>
+                                    <span class="text-[9px] text-slate-400">/mm³</span>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between text-[10px] text-slate-400 px-1 border-t border-slate-100 pt-3">
+                                <span>Ref: 15 ~ 50</span>
+                                <span class="text-red-500 font-bold uppercase tracking-wider">Alterado</span>
+                            </div>
+                        </div>
+
+                        <div class="border border-slate-200 rounded-xl p-5 bg-white text-center space-y-4 shadow-md relative overflow-hidden">
+                            <span class="text-xs font-bold text-slate-800 flex items-center justify-center gap-1.5 font-heading">Monócitos % <i class="fa-solid fa-triangle-exclamation text-red-500"></i></span>
+                            
+                            <div class="gauge-wrap">
+                                <div class="gauge-bg"></div>
+                                <div class="gauge-fill"></div>
+                                <div class="absolute bottom-0 inset-x-0 text-center">
+                                    <span class="text-2xl font-black text-slate-900 block leading-none">9.00</span>
+                                    <span class="text-[9px] text-slate-400">%</span>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between text-[10px] text-slate-400 px-1 border-t border-slate-100 pt-3">
+                                <span>Ref: 1 ~ 4</span>
+                                <span class="text-red-500 font-bold uppercase tracking-wider">Alterado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Descrição Adicional do Support Lab Exclusivo -->
+                <div class="border-t border-slate-200 pt-6">
+                    <h3 class="text-lg font-bold text-slate-950 font-heading mb-2">Support Lab Exclusivo</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Interpretação completa de exames laboratoriais em segundos. Extração de biomarcadores, análise individualizada de alterações e geração automática de gráficos históricos.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3️⃣ SEÇÃO: Gestão Integrada e Operação Clínica -->
+    <section id="gestao" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-[#0252fd] text-xs font-bold uppercase tracking-widest block font-heading">Controle Total e Sem Planilhas</span>
+                <h2 class="text-3xl font-bold text-slate-900 font-heading">Gerenciando sua operação de ponta a ponta</h2>
+                <p class="text-slate-500 text-sm">Estruture e automatize os bastidores financeiros, estoques e orçamentos do consultório.</p>
+            </div>
+
+            <!-- Grid de Processos Operacionais -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Estoque XML -->
+                <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl shadow-sm space-y-4">
+                    <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center text-lg"><i class="fa-solid fa-file-code"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 font-heading">Estoque Inteligente via XML</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Importe os arquivos XML das notas fiscais emitidas pelos seus fornecedores. O sistema realiza as entradas por lotes, distribui as quantidades e as respectivas datas de validade de forma automática.
+                    </p>
+                </div>
+                <!-- Fluxo de Enfermagem -->
+                <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl shadow-sm space-y-4">
+                    <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center text-lg"><i class="fa-solid fa-route"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 font-heading">Baixa Automática na Aplicação</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Assim que um plano de injetáveis é vendido, a ordem de aplicação é enviada para o painel da enfermagem. Ao finalizar o procedimento, o sistema dá baixa imediata nos produtos utilizados no estoque.
+                    </p>
+                </div>
+                <!-- Educação Continuada -->
+                <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl shadow-sm space-y-4">
+                    <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center text-lg"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 font-heading">Capacitação Integrada</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Sua equipe médica e operacional ganha acesso a uma plataforma exclusiva de ensino, reunindo mais de 2.500 horas de palestras científicas e atualizações para resguardar a qualidade técnica.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Caixa de Destaque para Treinamento e Implantação -->
+            <div class="mt-12 bg-gradient-to-r from-slate-50 to-blue-50/30 border border-slate-200 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-2 max-w-2xl text-center md:text-left">
+                    <h3 class="text-lg font-bold text-slate-900 font-heading flex items-center justify-center md:justify-start gap-2">
+                        <i class="fa-solid fa-chalkboard-user text-blue-600"></i>
+                        <span>Implantação Conectada com Suporte Online</span>
+                    </h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Treinamos toda a sua equipe (Recepção, Financeiro, Médicos e Enfermagem) por videoconferência com acompanhamento personalizado para garantir a transição suave do seu sistema anterior.
+                    </p>
+                </div>
+                <a href="https://wa.me/553189196026?text=Olá%20Fernando,%20gostaria%20de%20agendar%20uma%20demonstração%20personalizada%20do%20sistema." target="_blank" rel="noopener noreferrer" class="bg-[#0252fd] hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-xl text-xs tracking-wider uppercase whitespace-nowrap transition shadow-lg shadow-blue-600/10">
+                    Saber Mais Sobre Implantação
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção do Especialista (Fernando Lino) -->
+    <section id="especialista" class="py-24 bg-slate-50 border-t border-slate-100 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white border border-slate-200 p-8 sm:p-12 rounded-3xl shadow-xl grid md:grid-cols-12 gap-8 items-center">
+                
+                <!-- Informações Profissionais e Foto -->
+                <div class="md:col-span-8 flex flex-col md:flex-row items-center md:items-start gap-8 text-center md:text-left">
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-2xl overflow-hidden shadow-lg border-4 border-white bg-slate-200 shrink-0">
+                        <img src="IMG_70162.jpg" alt="Fernando Lino" class="w-full h-full object-cover">
+                    </div>
+                    <div class="space-y-4">
+                        <span class="text-[#0252fd] text-xs font-bold uppercase tracking-widest block font-heading">Especialista responsável</span>
+                        <h2 class="text-3xl font-bold text-slate-900 font-heading">Fernando Lino</h2>
+                        
+                        <div class="space-y-2.5 text-sm text-slate-600">
+                            <p class="flex items-center justify-center md:justify-start gap-2">
+                                <i class="fa-solid fa-briefcase text-blue-600 w-5"></i> 
+                                <span>Especialista em negócios <strong class="text-slate-900">@grupotgpm</strong></span>
+                            </p>
+                            <p class="flex items-center justify-center md:justify-start gap-2">
+                                <i class="fa-solid fa-microphone-lines text-blue-600 w-5"></i> 
+                                <span>Palestrante <strong class="text-slate-900">@supporthealthbrasil</strong></span>
+                            </p>
+                            <p class="flex items-center justify-center md:justify-start gap-2">
+                                <i class="fa-solid fa-award text-blue-600 w-5"></i> 
+                                <span>Mais de <strong class="text-slate-900">3.000 clínicas licenciadas</strong> por mim!</span>
+                            </p>
+                            <p class="flex items-center justify-center md:justify-start gap-2">
+                                <i class="fa-brands fa-whatsapp text-green-600 w-5 text-base"></i> 
+                                <span>WhatsApp: <strong class="text-slate-900">+55 31 8919-6026</strong></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ação Direta de WhatsApp -->
+                <div class="md:col-span-4 flex flex-col justify-center items-center bg-slate-50 p-6 rounded-2xl border border-slate-100 space-y-4">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-3xl shadow-md">
+                        <i class="fa-brands fa-whatsapp animate-bounce"></i>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-xs text-slate-400 font-medium block">Fale Conosco Direto</span>
+                        <span class="text-sm font-bold text-slate-900">+55 31 8919-6026</span>
+                    </div>
+                    <a href="https://wa.me/553189196026?text=Olá%20Fernando,%20gostaria%20de%20agendar%20uma%20demonstração%20personalizada%20do%20sistema." target="_blank" rel="noopener noreferrer" class="w-full text-center bg-[#0252fd] hover:bg-blue-700 text-white py-3.5 rounded-xl font-bold transition text-sm shadow-md shadow-blue-600/10">
+                        Agendar Demonstração
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <span class="text-xl font-extrabold text-white tracking-tight font-heading">Support<span class="text-[#0252fd]">Health</span></span>
+            <p class="text-center sm:text-right max-w-md text-slate-500">Organizando a medicina funcional integrativa no Brasil e tornando-a acessível a todas as pessoas. Grupo TGPM.</p>
+        </div>
+    </footer>
+
+    <!-- Lógica JavaScript das Abas de Prontuário Interativas -->
+    <script>
+        function switchTab(tabName) {
+            // Esconde todos os conteúdos
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove o estilo ativo de todos os botões
+            const buttons = document.querySelectorAll('[id^="tab-"]');
+            buttons.forEach(button => {
+                button.classList.remove('border-blue-500', 'text-white', 'bg-slate-900/60', 'font-semibold');
+                button.classList.add('border-transparent');
+            });
+            
+            // Mostra o conteúdo ativo
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+            
+            // Adiciona o estilo ativo no botão clicado
+            const activeBtn = document.getElementById('tab-' + tabName);
+            activeBtn.classList.remove('border-transparent');
+            activeBtn.classList.add('border-blue-500', 'text-white', 'bg-slate-900/60', 'font-semibold');
+        }
+    </script>
+
+</body>
+</html>
